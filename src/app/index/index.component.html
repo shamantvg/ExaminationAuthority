@@ -1,0 +1,111 @@
+<div class="limiter backgroudsame">
+    <div class="container-login100" style="background-image: url('../../assets/Login/images/bg-03.jpg');">
+        <div class="wrap-login100" id="reg_div_id" *ngIf="regContent!==null">
+            <form class="login100-form validate-form" (ngSubmit)="getStudentRes(StdResultForm)" #StdResultForm="ngForm">
+                <span class="login100-form-logo">
+                    <!-- <i class="zmdi zmdi-landscape"></i> -->
+                    <img src="../../assets/Login/images/svgLogoBck.png" style="width: inherit;">
+                </span>
+
+                <span class="login100-form-title p-b-34 p-t-27">
+                    Examination Authority
+                </span>
+
+                <div class="wrap-input100 validate-input" data-validate="Enter Registration Number">
+                    <input ngModel #reg_no="ngModel" class="input100" type="text" name="reg_no" id="reg_no" placeholder="Registration number" required>
+                    <span class="focus-input100" data-placeholder="&#xf207;"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input" data-validate="Enter date of birth">
+                    <input ngModel #dob="ngModel" onfocus="(this.type='date')" class="input100" type="text" name="dob" id="dob" placeholder="Select date of birth" required>
+                    <span class="focus-input100" data-placeholder="&#xf191;"></span>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn" type="submit" value="Submit" [disabled]="!StdResultForm.form.valid">Submit</button>
+                </div>
+                <span class="loadercls" *ngIf="loaderShow!==null"><img src="../../assets/Login/images/35.gif"></span>
+
+                <!-- <div class="text-center p-t-90">
+                    <a class="txt1" href="#">
+                        Forgot Password?
+                    </a>
+                </div> -->
+            </form>
+        </div>
+        <div *ngIf="TableContent!==null">
+            <span class="res100-form-logo">
+                <!-- <i class="zmdi zmdi-landscape"></i> -->
+                <img src="../../assets/Login/images/svgLogoBck.png" style="width: inherit;">
+            </span>
+
+            <span class="table100-form-title p-b-34">
+                Examination Authority
+            </span>
+            <table id="ResTableHead" class="ResTableClsHead cls-res-01head p-t-27">
+                <tr>
+                    <th>Name</th>
+                    <td>{{ResultHead.firstname}} {{ResultHead.lastname}}</td>
+                </tr>
+                <tr>
+                    <th>Registration Number</th>
+                    <td>{{ResultHead.reg_num}}</td>
+                </tr>
+                <tr>
+                    <th>Date of Result</th>
+                    <td>{{ResultHead.res_date * 1000 | date: 'MM/dd/yyyy'}}</td>
+                </tr>
+            </table>
+            <br/>
+            <div id="divResTable">
+                <table id="ResTable" class="ResTableCls cls-res-01">
+                    <tr>
+                        <th>Subject</th>
+                        <th>External Marks</th>
+                        <th>Internal Marks</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr *ngFor="let ResultVal of ResultList">
+                        <td>{{ResultVal.name}}</td>
+                        <td>{{ResultVal.extmarks}}</td>
+                        <td>{{ResultVal.intmarks}}</td>
+                        <td>{{ResultVal.extmarks + ResultVal.intmarks}}</td>
+                    </tr>
+                </table>
+                <br>
+                <table id="ResTableFooter" class="ResTableClsFooter cls-res-01footer">
+                    <tr>
+                        <th>Total Marks</th>
+                        <td>{{totalMarks}}</td>
+                    </tr>
+                    <tr>
+                        <th>Result</th>
+                        <td>{{Grade}}</td>
+                    </tr>
+                </table>
+                <span class="check_link" (click)="checkResult()">Check another result</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+<script src="../../assets/Login/vendor/jquery/jquery-3.2.1.min.js"></script>
+
+<!--===============================================================================================-->
+<script src="../../assets/Login/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="../../assets/Login/vendor/bootstrap/js/popper.js"></script>
+<script src="../../assets/Login/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="../../assets/Login/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="../../assets/Login/vendor/daterangepicker/moment.min.js"></script>
+<script src="../../assets/Login/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="../../assets/Login/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="../../assets/Login/js/main.js"></script>

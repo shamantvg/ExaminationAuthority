@@ -1,0 +1,96 @@
+[type="date"] {
+    background: url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;
+}
+
+[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+#divResTable {
+    overflow-x: auto;
+}
+
+#ResTable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 15px;
+}
+
+#ResTable td,
+#ResTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#ResTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#ResTable tr:hover {
+    background-color: #ddd;
+}
+
+#ResTable th {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: left;
+    background-color: cornflowerblue;
+    color: white;
+}
+
+#ResTable td {
+    padding-top: 5px;
+}
+
+.table100-form-title {
+    font-family: Poppins-Medium;
+    font-size: 25px;
+    /* color: #fff; */
+    line-height: 1.2;
+    text-align: center;
+    /* text-transform: uppercase; */
+    display: block;
+}
+
+.loadercls {
+    float: right;
+}
+
+.res100-form-logo {
+    font-size: 55px;
+    color: #333333;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    /* background-color: #fff; */
+    margin: 0 auto;
+}
+
+#ResTableHead {
+    width: 100%;
+    font-size: 13px;
+}
+
+#ResTableFooter {
+    width: 100%;
+    font-size: 13px;
+}
+
+.check_link {
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 500;
+    padding-left: 100px;
+}
